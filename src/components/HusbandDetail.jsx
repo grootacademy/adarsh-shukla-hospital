@@ -80,7 +80,7 @@ function HusbandDetail(props) {
            <input type="text" placeholder="CULTURE/SENSITIVITY" />
           </div>
           <div className="col-md-6 mt-3 d-flex justify-content-end">
-            <button className="btn btn-outline-danger mt-5 btn-lg" onClick={props.decreaseNum}>&lt; BACK</button>
+          <button className="btn btn-outline-danger mt-5 btn-lg" onClick={props.decreaseNum}>&lt; BACK</button>
             <button className="btn btn-outline-danger mt-5 btn-lg" style={{marginLeft:"5px"}} onClick={props.increaseNum}>NEXT &gt;</button>
           </div>
         </div>

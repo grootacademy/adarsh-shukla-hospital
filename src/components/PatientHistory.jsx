@@ -1,6 +1,7 @@
 import React from "react";
 
 function PatientHistory(props) {
+  
 
   return (
     <>

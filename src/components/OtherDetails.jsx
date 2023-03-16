@@ -48,7 +48,7 @@ function OtherDetails(props) {
       </div>
       <div className=" d-flex justify-content-end">
         <button className="btn btn-outline-danger mt-5 btn-lg" onClick={props.decreaseNum}>&lt; BACK</button>
-        <button className="btn btn-outline-danger mt-5 btn-lg" style={{ marginLeft: "5px" }}>SUBMIT &gt;</button>
+        <button className="btn btn-outline-danger mt-5 btn-lg" style={{ marginLeft: "5px" }} onClick={props.increaseNum}>SUBMIT &gt;</button>
       </div>
     </>
   );
