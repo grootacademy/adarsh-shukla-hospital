@@ -7,24 +7,33 @@ function PatientDetails(props) {
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingOne">
             <button
-              class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne" aria-expanded="false"
-              aria-controls="flush-collapseOne">
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
               Patient History (Menstrual - Medical - Surgical)
             </button>
           </h2>
           <div
-            id="flush-collapseOne" class="accordion-collapse collapse"
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
             aria-labelledby="flush-headingOne"
             data-bs-parent="#accordionFlushExample"
           >
             <div class="accordion-body">
               <div className="row my-2">
                 <div className=" d-flex justify-content-end">
-                  <button className="btn btn-outline-danger mt-5 btn-lg">Edit</button>
+                  <button className="btn btn-outline-danger mt-5 btn-lg">
+                    Edit
+                  </button>
                 </div>
                 <div className="col-md-3 my-2">
-                  <b><u>On History</u></b>
+                  <b>
+                    <u>On History</u>
+                  </b>
                 </div>
                 <div className="col-md-3">Married For: value</div>
                 <div className="col-md-3">Cohabitation: value</div>
@@ -32,7 +41,9 @@ function PatientDetails(props) {
               </div>
               <div className="row my-4">
                 <div className="col-md-2">
-                  <b><u>Medical History</u></b>
+                  <b>
+                    <u>Medical History</u>
+                  </b>
                 </div>
                 <div className="col-md-2">Diabetes</div>
                 <div className="col-md-2">Cancer</div>
@@ -41,11 +52,18 @@ function PatientDetails(props) {
                 <div className="col-md-2">Asthma</div>
               </div>
               <div className="row my-4">
-                <div className="col-md-6"> <b><u>Surgical History</u></b> </div>
+                <div className="col-md-6">
+                  {" "}
+                  <b>
+                    <u>Surgical History</u>
+                  </b>{" "}
+                </div>
                 <div className="col-md-6">Value</div>
               </div>
               <div className="row my-4">
-                <b><u>Menstrual History</u></b>
+                <b>
+                  <u>Menstrual History</u>
+                </b>
                 <div className="col-md-2">Regular</div>
                 <div className="col-md-2">Menarche: Value</div>
                 <div className="col-md-2"> LMP: Value</div>
@@ -78,10 +96,16 @@ function PatientDetails(props) {
             <div class="accordion-body">
               <div className="container-fluid">
                 <div className=" d-flex justify-content-end">
-                  <button className="btn btn-outline-danger mt-5 btn-lg">Edit</button>
+                  <button className="btn btn-outline-danger mt-5 btn-lg">
+                    Edit
+                  </button>
                 </div>
                 <div className="row my-4">
-                  <div className="col-md-2"><b><u>Personal Details</u></b></div>
+                  <div className="col-md-2">
+                    <b>
+                      <u>Personal Details</u>
+                    </b>
+                  </div>
                   <div className="col-md-2"> Age: Value</div>
                   <div className="col-md-2"> Occupation: Value</div>
                   <div className="col-md-2"> Medical History: Value</div>
@@ -120,7 +144,9 @@ function PatientDetails(props) {
             <div class="accordion-body">
               <div className="container-fluid">
                 <div className=" d-flex justify-content-end">
-                  <button className="btn btn-outline-danger mt-5 btn-lg">Edit</button>
+                  <button className="btn btn-outline-danger mt-5 btn-lg">
+                    Edit
+                  </button>
                 </div>
                 <div className="row my-4">
                   <div className="col-md-2 mt-2">Pallor: Value</div>
@@ -131,8 +157,11 @@ function PatientDetails(props) {
                   <div className="col-md-2">Hirsutism: Value</div>
                 </div>
                 <div className="row my-4">
-
-                  <div className="col-md-2"><b><u>Ultrasound</u></b></div>
+                  <div className="col-md-2">
+                    <b>
+                      <u>Ultrasound</u>
+                    </b>
+                  </div>
                   <div className="col-md-2">Day 2: Uterus: Value</div>
                   <div className="col-md-2">Endometrial Thickness: Value</div>
                   <div className="col-md-2">Rt. Ovary: Value</div>
@@ -142,13 +171,105 @@ function PatientDetails(props) {
             </div>
           </div>
         </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Investigations
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-md-6">Table 1</div>
+                  <div className="col-md-6">Table 2</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Hysterosalpingography & Laparohysteroscopy
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-12">
+                    <table style={{width:"100%"}}>
+                      <thead
+                        style={{
+                          textAlign: "center",
+                          border: "1px solid black",
+                        }}
+                        className="mt-3"
+                      >
+                        <tr >
+                          <th>Impression</th>
+                          <th> Plan</th>
+                        </tr>
+                      </thead>
+                      <tbody className="my-3">
+                        <tr >
+                          <td>
+                            <input
+                              type="text"
+                              name=""
+                              id="impression"
+                              placeholder="Click or Tap to write here"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              name=""
+                              id="plan"
+                              placeholder="Click or Tap to write here"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          className="btn btn-outline-danger btn-lg"
+          onClick={props.decreaseNum}
+        >
+          &lt; BACK{" "}
+        </button>
       </div>
-
-      <div className=" d-flex justify-content-end">
-        <button className="btn btn-outline-danger mt-5 btn-lg" onClick={props.decreaseNum}>&lt; BACK</button>
-        {/* <button className="btn btn-outline-danger mt-5 btn-lg" style={{ marginLeft: "5px" }} onClick={props.increaseNum}>SUBMIT &gt;</button> */}
-      </div>
-
     </>
   );
 }

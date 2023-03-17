@@ -18,3 +18,18 @@ input[type="text"]:focus::placeholder {
   color: blue;
   transition: all 0.3s ease-in-out;
 }
+
+input[type="text"]~label {
+  position: relative;
+  top: -50%;
+  left: 10px;
+  color: gray;
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus~label,
+input[type="text"]:valid~label {
+  top: -80%;
+  font-size: 12px;
+  color: rgb(206, 22, 120);
+}
