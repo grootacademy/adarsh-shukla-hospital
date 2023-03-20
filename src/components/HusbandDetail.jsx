@@ -3,13 +3,23 @@ import React, { useState } from "react";
 function HusbandDetail(props) {
 
   const [HusbandDetails, setHusbandDetails] = useState("");
-  const [personalDetails, setpersonalDetails] = useState("");
-  const handleChange = (e) => {
+  const [husbandpersonalDetails, sethusbandpersonalDetails] = useState("");
+  const husbandDetailschangeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     
     setHusbandDetails({...HusbandDetails, [name]:value})
-    setpersonalDetails({...personalDetails, [name]:value});
+  }
+  const husbandpersonalDetailsHandler = (e) => {
+
+    const name = e.target.name;
+    const value = e.target.value;
+    
+    if (e.target.type === "checkbox") {
+      sethusbandpersonalDetails({ ...husbandpersonalDetails, [name]: e.target.checked })
+    }else{
+      sethusbandpersonalDetails({...husbandpersonalDetails, [name]:value});
+    }
   }
   return (
     <>
@@ -28,44 +38,53 @@ function HusbandDetail(props) {
               HUSBAND DETAILS
               </h3>
             </div>
+            <div className='col-md-4'>
+              <p>Name: {props.personalDetails.patientName}</p>
+              <p>Age: {props.personalDetails.age}</p>
+              <p>Gender: {props.personalDetails.gender}</p>
+            </div>
           </div>
         </div>
       </div>
       <div className="container-fluid">
         <div className="h2">Personal Details</div>
-        <div className="row mt-5">
+        <div className="row mt-4">
           <div className="col-md-6">
-            <input type="text" placeholder="Age(In Years)" name="age" onClick={handleChange}/>
+            <input type="text" required name="age" onChange={husbandpersonalDetailsHandler}/>
+            <label htmlFor=""> AGE</label>
           </div>
           <div className="col-md-6">
-            <input type="text" placeholder="Occupation" name="occupation" onClick={handleChange}/>
-          </div>
-        </div>
-        <div className="row mt-5">
-          <div className="col-md-6">
-            <input type="text" placeholder="Medical History" name="MedicalHistory" onClick={handleChange} />
-          </div>
-          <div className="col-md-6">
-            <input type="text" placeholder="Surgical History" name="SurgicalHistory" onClick={handleChange} />
+            <input type="text" required name="occupation" onChange={husbandpersonalDetailsHandler}/>
+            <label htmlFor="">OCCUPATION</label>
           </div>
         </div>
-        <div className="row mt-5">
+        <div className="row mt-4">
+          <div className="col-md-6">
+            <input type="text" required name="MedicalHistory" onChange={husbandpersonalDetailsHandler} />
+            <label htmlFor="">MEDICAL HISTORY</label>
+          </div>
+          <div className="col-md-6">
+            <input type="text" required name="SurgicalHistory" onChange={husbandpersonalDetailsHandler} />
+            <label htmlFor="">SURGICAL HISTORY</label>
+          </div>
+        </div>
+        <div className="row mt-4">
           <div className="col-md-3"> H/O</div>
           <div className="col-md-3">
-            <label htmlFor="Coital Disturbance">
-              <input type="checkbox" id="Coital Disturbance" name="CoitalDisturbance" onClick={handleChange}/>
+            <label htmlFor="CoitalDisturbance">
+              <input type="checkbox" id="CoitalDisturbance" name="CoitalDisturbance" onChange={husbandpersonalDetailsHandler}/>
               Coital Disturbance
             </label>
           </div>
           <div className="col-md-3">
             <label htmlFor="Premature">
-              <input type="checkbox" id="Premature" name="premature" onClick={handleChange} />
+              <input type="checkbox" id="Premature" name="premature" onChange={husbandpersonalDetailsHandler} />
               Premature
             </label>
           </div>
           <div className="col-md-3">
-            <label htmlFor="Rerograde-Ejaculation">
-              <input type="checkbox" id="Rerograde-Ejaculation" name="rerogradeEjaculation" onClick={handleChange} />
+            <label htmlFor="RerogradeEjaculation">
+              <input type="checkbox" id="RerogradeEjaculation" name="rerogradeEjaculation" onChange={husbandpersonalDetailsHandler} />
               Rerograde Ejaculation
             </label>
           </div>
@@ -75,19 +94,24 @@ function HusbandDetail(props) {
         </div>
         <div className="row mt-3">
           <div className="col-md-6 mt-3">
-            <input type="text" placeholder="COUNT" name="COUNT" onClick={handleChange}/>
+            <input type="text" required name="COUNT" onChange={husbandDetailschangeHandler}/>
+            <label htmlFor="">COUNT</label>
           </div>
           <div className="col-md-6 mt-3">
-            <input type="text" placeholder="MOTILITY" name="motility" onClick={handleChange}/>
+            <input type="text" required name="motility" onChange={husbandDetailschangeHandler}/>
+            <label htmlFor="">MOTILITY</label>
           </div>
           <div className="col-md-6 mt-3">
-            <input type="text" placeholder="ABNORMAL FORMS" name="abnormalForms" onClick={handleChange}/>
+            <input type="text" required name="abnormalForms" onChange={husbandDetailschangeHandler}/>
+            <label htmlFor="">ABNORMAL FORMS</label>
           </div>
           <div className="col-md-6 mt-3">
-            <input type="text" placeholder="PUS CELLS" name="puscells" onClick={handleChange} />
+            <input type="text" required name="puscells" onChange={husbandDetailschangeHandler} />
+            <label htmlFor="">PUS CELLS</label>
           </div>
           <div className="col-md-6 mt-3">
-           <input type="text" placeholder="CULTURE/SENSITIVITY" name="culture/sensitivity" onClick={handleChange}/>
+           <input type="text" required name="culture/sensitivity" onChange={husbandDetailschangeHandler}/>
+           <label htmlFor="">CULTURE/SENSITIVITY</label>
           </div>
           <div className="col-md-6 mt-3 d-flex justify-content-end">
           <button className="btn btn-outline-danger mt-5 btn-lg" onClick={props.decreaseNum}>&lt; BACK</button>

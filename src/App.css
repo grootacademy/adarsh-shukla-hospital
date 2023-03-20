@@ -31,5 +31,5 @@ input[type="text"]:focus~label,
 input[type="text"]:valid~label {
   top: -80%;
   font-size: 12px;
-  color: rgb(206, 22, 120);
+  color: rgb(23, 225, 222);
 }

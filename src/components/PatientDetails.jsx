@@ -3,6 +3,39 @@ import React from "react";
 function PatientDetails(props) {
   return (
     <>
+    <div className="bg-danger p-4 text-white d-flex">
+        <div className="container-fluid">
+          <div className="row">
+            <div className=" h4 col-sm-3 text-sm-left">
+              <p>Name: {props.personalDetails.patientName}</p>
+            </div>
+
+            <div className=" h4 col-sm-3 text-sm-left">
+              <p>Gender: {props.personalDetails.gender}</p>
+            </div>
+            <div className=" h4 col-sm-3 text-sm-left">
+              <p>BMI: {props.personalDetails.bmi}</p>
+            </div>
+            <div className=" h4 col-sm-3 text-sm-left">
+              <p>Infertility: {props.personalDetails.gender}</p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-sm-3">
+              <p>Age: {props.personalDetails.age}</p>
+            </div>
+            <div className="col-sm-3">
+              <p>Height: {props.personalDetails.height}</p>
+            </div>
+            <div className="col-sm-3">
+              <p>Weight: {props.personalDetails.weight}</p>
+            </div>
+            <div className="col-sm-3">
+              <p>Husband Name: {props.personalDetails.HusbandName}</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingOne">
@@ -172,22 +205,22 @@ function PatientDetails(props) {
           </div>
         </div>
         <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
+          <h2 class="accordion-header" id="flush-headingFour">
             <button
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseTwo"
+              data-bs-target="#flush-collapseFour"
               aria-expanded="false"
-              aria-controls="flush-collapseTwo"
+              aria-controls="flush-collapseFour"
             >
               Investigations
             </button>
           </h2>
           <div
-            id="flush-collapseTwo"
+            id="flush-collapseFour"
             class="accordion-collapse collapse"
-            aria-labelledby="flush-headingTwo"
+            aria-labelledby="flush-headingFour"
             data-bs-parent="#accordionFlushExample"
           >
             <div class="accordion-body">
@@ -201,22 +234,22 @@ function PatientDetails(props) {
           </div>
         </div>
         <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
+          <h2 class="accordion-header" id="flush-headingFive">
             <button
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseTwo"
+              data-bs-target="#flush-collapseFive"
               aria-expanded="false"
-              aria-controls="flush-collapseTwo"
+              aria-controls="flush-collapseFive"
             >
               Hysterosalpingography & Laparohysteroscopy
             </button>
           </h2>
           <div
-            id="flush-collapseTwo"
+            id="flush-collapseFive"
             class="accordion-collapse collapse"
-            aria-labelledby="flush-headingTwo"
+            aria-labelledby="flush-headingFive"
             data-bs-parent="#accordionFlushExample"
           >
             <div class="accordion-body">

@@ -2,50 +2,45 @@ import React, { useState } from "react";
 
 function PatientHistory(props) {
 
-  const [onhistory, setOnHistory] = useState("")
-  const [MedicalHistory, setMedicalHistory] = useState("")
-  const [MenstrualHistory, setMenstrualHistory] = useState("")
-
+  let { patientHistory, setPatientHistory } = props;
+  
   const onHistoryHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setOnHistory({ ...onhistory, [name]: value })
+
+    let onHistory = { ...patientHistory.onHistory, [name]: value }
+    setPatientHistory({ ...patientHistory, onHistory })
   }
 
   const medicalHistoryHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
+    let medicalHistory = {}
 
     if (e.target.type == "checkbox") {
-
-      setMedicalHistory({ ...MedicalHistory, [name]: e.target.checked })
-
+      medicalHistory = { ...patientHistory.medicalHistory, [name]: e.target.checked }
     } else {
-
-      setMedicalHistory({ ...MedicalHistory, [name]: value })
-
+      medicalHistory = { ...patientHistory.medicalHistory, [name]: value }
     }
 
+    setPatientHistory({ ...patientHistory, medicalHistory })
   }
 
   const menstrualHistoryHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
+    let menstrualHistory = {}
+
     if (e.target.type == "checkbox") {
-
-      setMenstrualHistory({ ...MenstrualHistory, [name]: e.target.checked })
-
+      menstrualHistory = { ...patientHistory.menstrualHistory, [name]: e.target.checked }
     } else {
-
-      setMenstrualHistory({ ...MenstrualHistory, [name]: value })
-
+      menstrualHistory = { ...patientHistory.menstrualHistory, [name]: value }
     }
+
+    setPatientHistory({ ...patientHistory, menstrualHistory })
   }
 
-  let arr = {}
-
-  console.log(MenstrualHistory)
 
   return (
     <>
@@ -64,7 +59,7 @@ function PatientHistory(props) {
                 Patient History
               </h3>
             </div>
-            <div className='col-md-4'>
+            <div className='col-md-4 align-items-center justify-content-center'>
               <p>Name: {props.personalDetails.patientName}</p>
               <p>Age: {props.personalDetails.age}</p>
               <p>Gender: {props.personalDetails.gender}</p>
@@ -80,21 +75,26 @@ function PatientHistory(props) {
                 <b>On History</b>
               </u>
             </h2>
+
+
             <div className="row">
               <div className="col-md-12">
-                <input type="text" placeholder="Married For" name="marriedFor" onChange={onHistoryHandler} />
+                <input type="text" required name="marriedFor" value={patientHistory.onHistory?.marriedFor} onChange={onHistoryHandler} />
+                <label htmlFor="">Married For</label>
               </div>
             </div>
-            <div className="d-flex mt-4">
-              <div className="row">
-                <div className="col-md-6">
-                  <input type="text" placeholder="Cohabitation" name="cohabitation" onChange={onHistoryHandler} />
-                </div>
+
+            <div className="row">
+              <div className="col-md-6">
+                <input type="text" required name="cohabitation" onChange={onHistoryHandler} />
+                <label htmlFor="">Cohabitation</label>
               </div>
-              <div className="col-md-6 mx-3">
-                <input type="text" placeholder="Coital Frequency" name="coitalFrequency" onChange={onHistoryHandler} />
+              <div className="col-md-6">
+                <input type="text" required name="coitalFrequency" onChange={onHistoryHandler} />
+                <label htmlFor="">Coital Frequency</label>
               </div>
             </div>
+
             <div>
               <h2 className="my-3">
                 <b><u>Medical History</u></b>
@@ -102,45 +102,41 @@ function PatientHistory(props) {
             </div>
             <div className="row">
               <div className="col-md-4">
-                <label htmlFor="HTN">
-                  <input type="checkbox" id="HTN" name="htn" onChange={medicalHistoryHandler} /> HTN
-                </label>
+                <input type="checkbox" id="HTN" name="htn" onChange={medicalHistoryHandler} />
+                <label htmlFor="HTN">HTN</label>
               </div>
               <div className="col-md-4">
-                <label htmlFor="diabetes">
-                  <input type="checkbox" id="diabetes" name="diabetes" onChange={medicalHistoryHandler} /> Diabetes
-                </label>
+                <input type="checkbox" id="diabetes" name="diabetes" onChange={medicalHistoryHandler} />
+                <label htmlFor="diabetes"> Diabetes </label>
               </div>
               <div className="col-md-4">
-                <label htmlFor="Asthma">
-                  <input type="checkbox" id="Asthma" name="asthma" onChange={medicalHistoryHandler} /> Asthma
-                </label>
+                <input type="checkbox" id="Asthma" name="asthma" onChange={medicalHistoryHandler} />
+                <label htmlFor="Asthma">Asthma </label>
               </div>
 
               <div className="col-md-4">
-                <label htmlFor="Epilepsy">
-                  <input type="checkbox" id="Epilepsy" name="epilepsy" onChange={medicalHistoryHandler} /> Epilepsy
-                </label>
+                <input type="checkbox" id="Epilepsy" name="epilepsy" onChange={medicalHistoryHandler} />
+                <label htmlFor="Epilepsy">Epilepsy </label>
               </div>
               <div className="col-md-4">
-                <label htmlFor="Tuberculosis">
-                  <input type="checkbox" id="Tuberculosis" name="tuberculosis" onChange={medicalHistoryHandler} /> Tuberculosis
-                </label>
+                <input type="checkbox" id="Tuberculosis" name="tuberculosis" onChange={medicalHistoryHandler} />
+                <label htmlFor="Tuberculosis">Tuberculosis  </label>
               </div>
               <div className="col-md-4">
-                <label htmlFor="Cancer">
-                  <input type="checkbox" id="Cancer" name="cancer" onChange={medicalHistoryHandler} /> Cancer
-                </label>
+                <input type="checkbox" id="Cancer" name="cancer" onChange={medicalHistoryHandler} />
+                <label htmlFor="Cancer">Cancer </label>
               </div>
 
               <div className="row mt-3">
                 <div className="col-md-12">
-                  <input type="text" placeholder="Any Other" name="extra" onChange={medicalHistoryHandler} />
+                  <input type="text" required name="extra" onChange={medicalHistoryHandler} />
+                  <label htmlFor="">ANY OTHER</label>
                 </div>
               </div>
               <div className="row mt-3">
                 <div className="col-md-12">
-                  <input type="text" placeholder="Surgical History" name="surgicalHistory" onChange={medicalHistoryHandler} />
+                  <input type="text" required name="surgicalHistory" onChange={medicalHistoryHandler} />
+                  <label htmlFor="">SURGICAL HISTORY</label>
                 </div>
               </div>
             </div>
@@ -153,10 +149,12 @@ function PatientHistory(props) {
             </h2>
             <div className="row">
               <div className="col-md-4">
-                <input type="text" placeholder="Menarche" name="menarche" onChange={menstrualHistoryHandler} />
+                <input type="text" required name="menarche" onChange={menstrualHistoryHandler} />
+                <label htmlFor="">MENARCHE</label>
               </div>
               <div className="col-md-4">
-                <input type="text" placeholder="LMP" name="lmp" onChange={menstrualHistoryHandler} />
+                <input type="text" required name="lmp" onChange={menstrualHistoryHandler} />
+                <label htmlFor="">LMP</label>
               </div>
               <div className="col-md-4">
                 <div>
@@ -175,13 +173,16 @@ function PatientHistory(props) {
             </div>
             <div className="row d-flex ">
               <div className="col-md-4">
-                <input type="text" placeholder="Length" name="length" onChange={menstrualHistoryHandler} />
+                <input type="text" required name="length" onChange={menstrualHistoryHandler} /><label htmlFor="">LENGTH</label>
+
               </div>
               <div className="col-md-4">
-                <input type="text" placeholder="Duration" name="duration" onChange={menstrualHistoryHandler} />
+                <input type="text" required name="duration" onChange={menstrualHistoryHandler} />
+                <label htmlFor=""> DURATION</label>
               </div>
               <div className="col-md-4">
-                <input type="text" placeholder="Flow" name="flow" onChange={menstrualHistoryHandler} />
+                <input type="text" required name="flow" onChange={menstrualHistoryHandler} />
+                <label htmlFor=""> FLOW</label>
               </div>
             </div>
             <div className="d-flex mt-5">
@@ -198,25 +199,25 @@ function PatientHistory(props) {
 
               <ul className="list-group">
                 <li className="list-group-item"><input type="checkbox" name="coitalDisturbance" onChange={menstrualHistoryHandler} />
-                  {MenstrualHistory?.coitalDisturbance ? "yes" : "no"}
+                  {patientHistory.menstrualHistory?.coitalDisturbance ? "YES" : "NO"}
                 </li>
                 <li className="list-group-item"><input type="checkbox" name="PIDTuberculosis" onChange={menstrualHistoryHandler} />
-                  {MenstrualHistory?.PIDTuberculosis ? "yes" : "no"}
+                  {patientHistory.menstrualHistory?.PIDTuberculosis ? "YES" : "NO"}
                 </li>
                 <li className="list-group-item"><input type="checkbox" name="PCOS" onChange={menstrualHistoryHandler} />
-                  {MenstrualHistory?.PCOS ? "yes" : "no"}
+                  {patientHistory.menstrualHistory?.PCOS ? "YES" : "NO"}
                 </li>
                 <li className="list-group-item"><input type="checkbox" name="Hyperprolactinemia" onChange={menstrualHistoryHandler} />
-                  {MenstrualHistory?.Hyperprolactinemia ? "yes" : "no"}
+                  {patientHistory.menstrualHistory?.Hyperprolactinemia ? "YES" : "NO"}
                 </li>
                 <li className="list-group-item"><input type="checkbox" name="HyperHypothyroidis" onChange={menstrualHistoryHandler} />
-                  {MenstrualHistory?.HyperHypothyroidis ? "yes" : "no"}
+                  {patientHistory.menstrualHistory?.HyperHypothyroidis ? "YES" : "NO"}
                 </li>
                 <li className="list-group-item"><input type="checkbox" name="PremenstrualDisturbanceDepression" onChange={menstrualHistoryHandler} />
-                  {MenstrualHistory?.PremenstrualDisturbanceDepression ? "yes" : "no"}
+                  {patientHistory.menstrualHistory?.PremenstrualDisturbanceDepression ? "YES" : "NO"}
                 </li>
                 <li className="list-group-item"><input type="checkbox" name="DyspareuniaDismenorrhoea" onChange={menstrualHistoryHandler} />
-                  {MenstrualHistory?.DyspareuniaDismenorrhoea ? "yes" : "no"}
+                  {patientHistory.menstrualHistory?.DyspareuniaDismenorrhoea ? "YES" : "NO"}
                 </li>
               </ul>
             </div>

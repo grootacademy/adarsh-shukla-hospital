@@ -16,14 +16,15 @@ function OtherDetails(props) {
             <div className=" h1 col-sm-4 text-sm-left"> STEP 6 OF 6 </div>
             <div className="col-sm-4">
               <h3 className="d-flex align-items-center justify-content-center">
-              <img
-                src="/images/history.png"
-                alt="Error Loading Image"
-                height="30px"
-                className="mx-2"
-              />
-              OTHER DETAILS
+                <img src="/images/history.png" alt="History Image" height="30px"           className="mx-2" />
+
+                OTHER DETAILS
               </h3>
+            </div>
+            <div className='col-md-4'>
+              <p>Name: {props.personalDetails.patientName}</p>
+              <p>Age: {props.personalDetails.age}</p>
+              <p>Gender: {props.personalDetails.gender}</p>
             </div>
           </div>
         </div>
@@ -34,23 +35,23 @@ function OtherDetails(props) {
             <u>HYSTEROSALPINGOGRAPHY</u>
           </b>
         </div>
-        <div className="row">
-          <div className="col-md-6">
-            <input type="text" placeholder="Uterus" name="Uterus" onClick={handleChange} />
+        <div className="row my-4">
+          <div className="col-md-6 mt-3">
+            <input type="text" placeholder="Uterus" name="Uterus" onChange={handleChange} />
           </div>
-          <div className="col-md-6">
-            <input type="text" placeholder="Genetic Study" name="Genetic Study" onClick={handleChange}/>
+          <div className="col-md-6 mt-3">
+            <input type="text" placeholder="Genetic Study" name="Genetic Study" onChange={handleChange}/>
           </div>
-          <div className="col-md-6">
-            <input type="text" placeholder="Rt. Ovary" name="Rt. Ovary" onClick={handleChange} />
+          <div className="col-md-6 mt-3">
+            <input type="text" placeholder="Rt. Ovary" name="Rt. Ovary" onChange={handleChange} />
           </div>
-          <div className="col-md-6">
-            <input type="text" placeholder="Lt. Ovary" name="Lt.Ovary" onClick={handleChange} />
+          <div className="col-md-6 mt-3">
+            <input type="text" placeholder="Lt. Ovary" name="Lt.Ovary" onChange={handleChange} />
           </div>
         </div>
         <div><h2><b><u>Laparohyteroscopy</u></b></h2></div>
-        <div className="row">
-            <div className="col-md-12"><input type="text" placeholder="Details" name="details" onClick={handleChange}/></div>
+        <div className="row my-4">
+            <div className="col-md-12"><input type="text" placeholder="Details" name="details" onChange={handleChange}/></div>
         </div>
       </div>
 

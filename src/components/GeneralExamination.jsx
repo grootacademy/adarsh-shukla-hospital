@@ -23,27 +23,43 @@ function GeneralExamination(props) {
                 General Details
                 </h3>
             </div>
+            <div className='col-md-4'>
+              <p>Name: {props.personalDetails.patientName}</p>
+              <p>Age: {props.personalDetails.age}</p>
+              <p>Gender: {props.personalDetails.gender}</p>
+            </div>
           </div>
         </div>
       </div>
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-6"><input type="text" placeholder="Pallor" name="pallor" onClick={handleChange}/></div>
-          <div className="col-md-6"><input type="text" placeholder="Lymphadenopathy" onClick={handleChange}/></div>
-          <div className="col-md-6"><input type="text" placeholder="Thyroid" onClick={handleChange}/></div>
-          <div className="col-md-6"><input type="text" placeholder="Tanners" onClick={handleChange}/></div>
-          <div className="col-md-6"><input type="text" placeholder="Breast" onClick={handleChange}/></div>
-          <div className="col-md-6"><input type="text" placeholder="Hirsutism" onClick={handleChange}/></div>
+        <div className="row my-3">
+          <div className="col-md-6"><input type="text" required name="pallor" onChange={handleChange}/>
+          <label htmlFor="">PALLOR</label></div>
+          <div className="col-md-6"><input type="text" required name ="Lymphadenopathy" onChange={handleChange}/>
+          <label htmlFor="">LYMPHADENOPATHY</label></div>
+          <div className="col-md-6"><input type="text" required name="Thyroid" onChange={handleChange}/>
+          <label htmlFor="">THYROID</label></div>
+          <div className="col-md-6"><input type="text" required name="Tanners" onChange={handleChange}/>
+          <label htmlFor="">TANNERS</label></div>
+          <div className="col-md-6"><input type="text" required name="Breast" onChange={handleChange}/>
+          <label htmlFor="">BREAST</label></div>
+          <div className="col-md-6"><input type="text" required name="Hirsutism" onChange={handleChange}/>
+          <label htmlFor="">HIRSUTISM</label></div>
         </div>
         <div className="h2">
             <b><u>ULTRASOUND</u></b>
         </div>
-        <div className="row">
-            <div className="col-md-6"><input type="text" placeholder="Day 2: Uterus" name="day2Uterus" onClick={handleChange}/></div>
-            <div className="col-md-6"><input type="text" placeholder="Endometrial Thickness" name="endometrialThickness" onClick={handleChange}/></div>
-            <div className="col-md-6"><input type="text" placeholder="Rt. Ovary" name="rtOvary" onClick={handleChange}/></div>
-            <div className="col-md-6"><input type="text" placeholder="Lt. Ovary" name="ltOvary" onClick={handleChange}/></div>
-            <div className="col-md-6"><input type="text" placeholder="Any Other" name="anyOther" onClick={handleChange}/></div>
+        <div className="row my-3">
+            <div className="col-md-6"><input type="text" required  name="day2Uterus" onChange={handleChange}/>
+            <label htmlFor="">Day 2: UTERUS</label></div>
+            <div className="col-md-6"><input type="text" required  name="endometrialThickness" onChange={handleChange}/>
+            <label htmlFor="">ENDOMETRIAL THICKNESS</label></div>
+            <div className="col-md-6"><input type="text" required  name="rtOvary" onChange={handleChange}/>
+            <label htmlFor="">Rt. OVARY</label></div>
+            <div className="col-md-6"><input type="text" required  name="ltOvary" onChange={handleChange}/>
+            <label htmlFor="">Lt. OVARY</label></div>
+            <div className="col-md-6"><input type="text" required  name="anyOther" onChange={handleChange}/>
+            <label htmlFor="">ANY OTHER</label></div>
         </div>
       </div>
         <div className=" d-flex justify-content-end">
