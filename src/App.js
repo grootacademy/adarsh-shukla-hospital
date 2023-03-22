@@ -7,6 +7,7 @@ import Investigations from "./components/Investigations";
 import OtherDetails from "./components/OtherDetails";
 import PatientDetails from "./components/PatientDetails";
 import PatientHistory from "./components/PatientHistory";
+import Google from "./components/Google";
 
 function App() {
   const [num, setNum] = useState(1)
@@ -26,13 +27,15 @@ function App() {
   return (
     <>
 
-      {num == 1 && <PersonalDetails increaseNum={increaseNum} setPersonalDetails={setPersonalDetails} personalDetails={personalDetails} />}
+      {/* {num == 1 && <PersonalDetails increaseNum={increaseNum} setPersonalDetails={setPersonalDetails} personalDetails={personalDetails} />}
       {num == 2 && <PatientHistory increaseNum={increaseNum} decreaseNum={decreaseNum} personalDetails={personalDetails} patientHistory={patientHistory} setPatientHistory={setPatientHistory} />}
       {num == 3 && <HusbandDetail increaseNum={increaseNum} decreaseNum={decreaseNum} personalDetails={personalDetails} />}
       {num == 4 && <GeneralExamination increaseNum={increaseNum} decreaseNum={decreaseNum} personalDetails={personalDetails} />}
       {num == 5 && <Investigations increaseNum={increaseNum} decreaseNum={decreaseNum} personalDetails={personalDetails} />}
       {num == 6 && <OtherDetails increaseNum={increaseNum} decreaseNum={decreaseNum} personalDetails={personalDetails} />}
-      {num == 7 && <PatientDetails decreaseNum={decreaseNum} personalDetails={personalDetails} />}
+      {num == 7 && <PatientDetails decreaseNum={decreaseNum} personalDetails={personalDetails} />} */}
+
+      <Google />
 
     </>
   );
